@@ -1,0 +1,18 @@
+Please respectfully read this document with understanding.
+The GreyNigma product does not collect any data about you, your use of this software, except your IP address, which helps us fight spammers. Your IP address is not stored anywhere and is not shared with anyone, except in a blocking situation where the IP address is stored in a database of offenders.
+We don't want your data, we want your security.
+Use of GreyNigma is allowed for both personal and commercial use.
+GreyNigma_CLI and GreyNigma_GUI software is distributed under GNU GPL v3 free license.
+
+The author of the idea and the software is GreyHat, who in turn disclaims any responsibility for any damage caused or obtained by the software. GreyNigma is equipped with a sufficiently strong level of security and is ready for use.
+Remember, with great power comes great responsibility. Be strong!
+
+
+Уважительно просим прочесть данный документ с пониманием.
+Продукт GreyNigma не собирает никаких данных о вас, вашем использовании данного ПО, за исключением вашего IP-адреса, который помогает нам бороться со спаммерами. Ваш IP адрес нигде не хранится и никому не передаётся, за исключением ситуации блокировки, когда IP-адрес хранится в базе данных нарушителей.
+Нам не нужны ваши данные, нам нужна ваша безопасность.
+Использование GreyNigma разрешается как личное, так и коммерческое.
+Программное обеспечение GreyNigma_CLI и GreyNigma_GUI распространяется под свободной лицензией GNU GPL v3.
+
+Безусловным автором идеи и программного обеспечения является GreyHat, который, в свою очередь, снимает с себя ответственность за любой ущерб, нанесённый или полученный данным ПО. GreyNigma оснащена достаточно мощным уровнем безопасности и готова к использованию.
+Помните, с большой силой приходит большая ответственность. Будьте сильными!

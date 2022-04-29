@@ -1,0 +1,4 @@
+requests
+clipboard
+tk
+bs4

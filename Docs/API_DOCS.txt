@@ -1,0 +1,207 @@
+ENGLISH API GUIDE FOR DEVELOPERS
+
+The final recipient of the request:
+https://greynigma.herokuapp.com/
+
+Supported methods: GET, POST
+API accepts JSON parameters only.
+
+===========================================
+METHODS
+===========================================
+1. Creating a secure seed-key
+
+https://greynigma.herokuapp.com/createSecureSeed
+Response:
+{
+  { "success": true,
+  "seedKey": "_Ri2l-+:/35h&s>?7G^cS|T8$EjbZw!z"
+}
+
+
+IMPORTANT!
+'seedKey': '1337' and 'seedKey': 1337 are different sed-keys!
+Seed-key supports the following data types: None (absolute pseudo-random), int, float, str, bytes, bytearray, as well as bool
+===========================================
+Encrypting with Gipher (alphabetical character shift up/down)
+
+https://greynigma.herokuapp.com/gipherEncrypt
+json: {'seedKey': '1337', 'message': 'hello'}
+
+response:
+{
+  'success': True,
+  { 'message': 'hejkv'
+}
+===========================================
+3. Deciphering Gipher (the reverse of step 2)
+
+https://greynigma.herokuapp.com/gipherDecrypt
+json: {'seedKey': '1337', 'message': 'hejkv'}
+
+response:
+{
+  'success': True,
+  { 'message': 'hello'
+}
+===========================================
+4. encrypting GreyNigma (1 message)
+
+https://greynigma.herokuapp.com/encryptMessage
+json: {'seedKey': '1337', 'message': 'hello'}
+
+response:
+{
+'success': True,
+'message': '{523454269}{333831545}{912483291}{972471385}{807134099}'
+}
+===========================================
+5. GreyNigma message decoding (1 message, any type of lines and length)
+
+https://greynigma.herokuapp.com/decryptMessage
+json: {'seedKey': '1337', 'message': '{523454269}{333831545}{912483291}{972471385}{807134099}'}
+
+response:
+{
+'success': True,
+{ 'message': 'hello'
+}
+===========================================
+6. Generating a full 3 line message
+
+https://greynigma.herokuapp.com/createMessage
+json: {'seedKey': '1337', 'firstFake': 'hello', 'original': 'world', 'secondFake': 'how are you?'}
+
+response:
+{
+  'success': True,
+  'message': '{212359094}{695989622}{954215166}{727585596}{765991621}{775583293}{191504237}{642550042}{328188962}{201622897}{390024441}{852577558}{630416466}{878033414}{717542016}{789695446}{688198386}{191978999}{966484992}{838988165}{103264710}{425553605}{407703839}{191978999}{771220238}{899061909}{19559407}{408599159}{205818792}{778957454}{881228516}{330484219}{349498904}{205818792}{881228516}{346824393}{388199838}{819642581}{516300035}{778209033}{288679457}{87462499}{535512818}{264224968}{816938778}{579099042}{943225784}{332190534}{972471385}{972471385}{580117717}{723447871}'
+}
+===========================================
+GN_TOKEN
+
+GreyNigma API Token allows to increase request limit
+It must be added to headers in authorization (similar to Bearer token)
+
+Format: headers['authorization'] = GN_TOKEN <TOKEN>
+
+An example CURL request with the token:
+curl -XGET -H "Authorization: GN_TOKEN <TOKEN>" https://greynigma.herokuapp.com/createSecureSeed
+
+If the token is valid, the limit will be increased.
+To get GN_TOKEN, contact us at one of the following contacts:
+
+E-Mail: greyhatfeedback@protonmail.com
+Telegram: @greyhatfdbot
+
+===========================================
+LIMITATIONS:
+For normal users: 20 requests/minute for any method (the counter works separately for each method)
+For users with GN_TOKEN: 5 requests/second
+If you violate the restrictions, your IP address will be blocked for 1 week/month/year/forever, depending on the severity of the restriction violation.
+
+
+
+
+
+РУССКИЙ ГАЙД ПО API ДЛЯ РАЗРАБОТЧИКОВ
+
+Конечный получатель запроса:
+https://greynigma.herokuapp.com/
+
+Поддерживаемые методы: GET, POST
+API принимает исключительно JSON-параметры.
+
+===========================================
+МЕТОДЫ
+===========================================
+1. Создание безопасного seed-ключа
+
+https://greynigma.herokuapp.com/createSecureSeed
+ответ:
+{
+  "success": true, 
+  "seedKey": "_Ri2l-+:/35h&s>?7G^cS|T8$EjbZw!z"
+}
+
+
+ВАЖНО!
+'seedKey': '1337' и 'seedKey': 1337 - это разные сид-ключи!
+Seed-ключ поддерживает следующие типы данных : None(абсолютный псевдо-рандом), int, float, str, bytes, bytearray, а так же bool
+===========================================
+2. Шифруем с помощью Gipher (побуквенное смещение символов вверх/вниз по алфавиту)
+
+https://greynigma.herokuapp.com/gipherEncrypt
+json: {'seedKey': '1337', 'message': 'hello'}
+
+ответ:
+{
+  'success': True, 
+  'message': 'hejkv'
+}
+===========================================
+3. Расшифровка Gipher (обратное действие пункту 2)
+
+https://greynigma.herokuapp.com/gipherDecrypt
+json: {'seedKey': '1337', 'message': 'hejkv'}
+
+ответ:
+{
+  'success': True, 
+  'message': 'hello'
+}
+===========================================
+4. Шифрование GreyNigma (1 сообщение)
+
+https://greynigma.herokuapp.com/encryptMessage
+json: {'seedKey': '1337', 'message': 'hello'}
+
+ответ:
+{
+'success': True, 
+'message': '{523454269}{333831545}{912483291}{972471385}{807134099}'
+}
+===========================================
+5. Расшифровка сообщения GreyNigma (1 сообщениe, любой тип строк и длина)
+
+https://greynigma.herokuapp.com/decryptMessage
+json: {'seedKey': '1337', 'message': '{523454269}{333831545}{912483291}{972471385}{807134099}'}
+
+ответ:
+{
+'success': True, 
+'message': 'hello'
+}
+===========================================
+6. Генерация полноценного сообщения из 3х строк
+
+https://greynigma.herokuapp.com/createMessage
+json: {'seedKey': '1337', 'firstFake': 'hello', 'original': 'world', 'secondFake': 'how are you?'}
+
+ответ:
+{
+  'success': True, 
+  'message': '{212359094}{695989622}{954215166}{727585596}{765991621}{775583293}{191504237}{642550042}{328188962}{201622897}{390024441}{852577558}{630416466}{878033414}{717542016}{789695446}{688198386}{191978999}{966484992}{838988165}{103264710}{425553605}{407703839}{191978999}{771220238}{899061909}{19559407}{408599159}{205818792}{778957454}{881228516}{330484219}{349498904}{205818792}{881228516}{346824393}{388199838}{819642581}{516300035}{778209033}{288679457}{87462499}{535512818}{264224968}{816938778}{579099042}{943225784}{332190534}{972471385}{972471385}{580117717}{723447871}'
+}
+===========================================
+GN_TOKEN
+
+GreyNigma API Token позволяет увеличить лимит запросов
+Его нужно добавить в headers в авторизацию (на подобии Bearer token)
+
+Формат: headers['authorization'] = GN_TOKEN <TOKEN>
+
+пример CURL-запроса с токеном:
+curl -XGET -H "Authorization: GN_TOKEN <TOKEN>" https://greynigma.herokuapp.com/createSecureSeed
+
+Если токен валидный - лимит будет увеличен.
+Чтобы получить GN_TOKEN - обратитесь к нам по одному из следующих контактов:
+
+E-Mail: greyhatfeedback@protonmail.com
+Telegram: @greyhatfdbot
+
+===========================================
+ОГРАНИЧЕНИЯ:
+Для обычных пользователей: 20 запросов/минута на любой метод (счётчик работает отдельно для каждого метода)
+Для пользователей, имеющих GN_TOKEN - 5 запросов/секунда
+В случае нарушения ограничений, ваш IP-адрес будет заблокирован на 1 неделю/месяц/год/навсегда, в зависимости от тяжести нарушения ограничений.
