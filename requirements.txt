@@ -1,5 +1,0 @@
-requests
-clipboard
-tk
-bs4
-lxml
